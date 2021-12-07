@@ -57,12 +57,12 @@ class Home extends BaseController
 				'aoo' => $Delegates->where('lb','Other')->countAllResults(),
 				'male' => $Delegates->where('gender','male')->countAllResults(),
 				'female' => $Delegates->where('gender','female')->countAllResults(),
-				'psec' => $Delegates->where('category','Primary School')->countAllResults(),
-				'jsec' => $Delegates->where('category','Junior Secondary')->countAllResults(),
-				'ssec' => $Delegates->where('category','Senior Secondary')->countAllResults(),
-				'hi' => $Delegates->where('category','Higher Institution')->countAllResults(),
-				'workers' => $Delegates->where('category','Worker')->countAllResults(),
-				'sch_leaver' => $Delegates->where('category','School Leaver')->countAllResults(),
+				'psec' => $Delegates->where('category','primary')->countAllResults(),
+				'jsec' => $Delegates->where('category','jsec')->countAllResults(),
+				'ssec' => $Delegates->where('category','ssec')->countAllResults(),
+				'hi' => $Delegates->where('category','hi')->countAllResults(),
+				'workers' => $Delegates->where('category','Workers')->countAllResults(),
+				'sch_leaver' => $Delegates->where('category','sch_leaver')->countAllResults(),
 			);
 
 			echo view('header');
