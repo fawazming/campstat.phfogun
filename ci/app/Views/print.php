@@ -29,7 +29,7 @@
 					<tbody>
 						<?php foreach ($delegates as $key => $delegate): ?>
 						<tr>
-							<td>PM00<?=$delegate['id']?></td>
+							<td><?=$delegate['id']?></td>
 							<td><a href="javascript:;"><?=$delegate['lname']?></a></td>
 							<td><?=$delegate['fname']?></td>
 							<td><?=$delegate['phone']?></td>
