@@ -54,7 +54,7 @@ class Home extends BaseController
 				'remo' => $Delegates->where('lb','Remo')->countAllResults(),
 				'egba' => $Delegates->where('lb','Egba')->countAllResults(),
 				'ijebu' => $Delegates->where('lb','Ijebu')->countAllResults(),
-				'aoo' => $Delegates->where('lb','Other')->countAllResults(),
+				'aoo' => $Delegates->where(['lb'=>'Adoodo', 'lb'=>'others'])->countAllResults(),
 				'male' => $Delegates->where('gender','male')->countAllResults(),
 				'female' => $Delegates->where('gender','female')->countAllResults(),
 				'psec' => $Delegates->where('category','primary')->countAllResults(),
