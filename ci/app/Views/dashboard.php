@@ -42,6 +42,11 @@
 							<h6 class="mb-0 mt-3 font-15 text-muted font-weight-normal"><a href="<?= base_url('admin/zone?zid=4') ?>">Ado Odo</a>
 							</h6>
 						</div>
+						<div class="col-md-3 col-sm-4 text-center">
+							<div class="easypie" data-percent="<?=(($others/100)*100)?>" data-bar-color="#ee1021" data-size="110" data-line-width="8"><span class="easypie-data text-primary" style="font-size:32px;"><?=($others) ?></span></div>
+							<h6 class="mb-0 mt-3 font-15 text-muted font-weight-normal"><a href="<?= base_url('admin/zone?zid=4') ?>">Others</a>
+							</h6>
+						</div>
 					</div>
 				</div>
 			</div>
