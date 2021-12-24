@@ -34,6 +34,9 @@ $routes->get('/', 'Home::index');
 $routes->get('/dashboard', 'Home::dashboard');
 $routes->get('/printe', 'Home::printe');
 $routes->post('/auth', 'Home::auth');
+$routes->get('/manual', 'Home::manual');
+$routes->get('/manual1', 'Home::manual1');
+$routes->post('/manual2', 'Home::manual2');
 $routes->get('/admin/logout', 'Home::logout');
 
 /**

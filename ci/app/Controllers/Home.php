@@ -74,6 +74,47 @@ class Home extends BaseController
 		}
 	}
 
+	public function manual()
+	{
+		$logged_in = session()->get('admin_logged_in');
+		if ($logged_in) {
+
+			echo view('header');
+			echo view('manualUpload');
+			echo view('footer');
+		} else {
+			echo view('login');
+		}
+	}
+
+	public function manual1()
+	{
+		$logged_in = session()->get('admin_logged_in');
+		if ($logged_in) {
+
+			echo view('header');
+			echo view('manualUpload1', $this->request->getGet());
+			echo view('footer');
+		} else {
+			echo view('login');
+		}
+	}
+
+	public function manual2()
+	{
+		$logged_in = session()->get('admin_logged_in');
+		if ($logged_in) {
+
+			$manual = new \App\Models\ManualDel();
+			$incoming = $this->request->getPost();
+			$res = $manual->insert($incoming);
+
+			return redirect()->back();
+		} else {
+			echo view('login');
+		}
+	}
+
 	
 	public function printe()
 	{
