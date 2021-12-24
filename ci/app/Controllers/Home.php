@@ -1,4 +1,6 @@
-<?php namespace App\Controllers;
+<?php
+
+namespace App\Controllers;
 
 class Home extends BaseController
 {
@@ -19,7 +21,7 @@ class Home extends BaseController
 		$uname = $this->request->getPost('username');
 		$password = $this->request->getPost('password');
 
-		if ($uname == 'phfogun' && $password=='pmc2020'){
+		if ($uname == 'phfogun' && $password == 'pmc2020') {
 			$newdata = array(
 				'admin' => $uname,
 				'admin_logged_in' => TRUE
@@ -41,30 +43,47 @@ class Home extends BaseController
 			echo view('login');
 		}
 	}
-	
+
 	public function dashboard()
 	{
 		// echo('dashboard');	
 		$logged_in = session()->get('admin_logged_in');
 		$Delegates = new \App\Models\Delegates();
+		$ManualDel = new \App\Models\ManualDel();
 		if ($logged_in) {
 
-			$data = array(
+			$data = [
 				'total_del' => $Delegates->countAll(),
-				'remo' => $Delegates->where('lb','Remo')->countAllResults(),
-				'egba' => $Delegates->where('lb','Egba')->countAllResults(),
-				'ijebu' => $Delegates->where('lb','Ijebu')->countAllResults(),
-				'aoo' => $Delegates->where('lb','Adoodo')->countAllResults(),
-				'others' => $Delegates->where('lb','others')->countAllResults(),
-				'male' => $Delegates->where('gender','male')->countAllResults(),
-				'female' => $Delegates->where('gender','female')->countAllResults(),
-				'psec' => $Delegates->where('category','primary')->countAllResults(),
-				'jsec' => $Delegates->where('category','jsec')->countAllResults(),
-				'ssec' => $Delegates->where('category','ssec')->countAllResults(),
-				'hi' => $Delegates->where('category','hi')->countAllResults(),
-				'workers' => $Delegates->where('category','Workers')->countAllResults(),
-				'sch_leaver' => $Delegates->where('category','sch_leaver')->countAllResults(),
-			);
+				'remo' => $Delegates->where('lb', 'Remo')->countAllResults(),
+				'egba' => $Delegates->where('lb', 'Egba')->countAllResults(),
+				'ijebu' => $Delegates->where('lb', 'Ijebu')->countAllResults(),
+				'aoo' => $Delegates->where('lb', 'Adoodo')->countAllResults(),
+				'others' => $Delegates->where('lb', 'others')->countAllResults(),
+				'male' => $Delegates->where('gender', 'male')->countAllResults(),
+				'female' => $Delegates->where('gender', 'female')->countAllResults(),
+				'psec' => $Delegates->where('category', 'primary')->countAllResults(),
+				'jsec' => $Delegates->where('category', 'jsec')->countAllResults(),
+				'ssec' => $Delegates->where('category', 'ssec')->countAllResults(),
+				'hi' => $Delegates->where('category', 'hi')->countAllResults(),
+				'workers' => $Delegates->where('category', 'Workers')->countAllResults(),
+				'sch_leaver' => $Delegates->where('category', 'sch_leaver')->countAllResults(),
+				'manual' => [
+					'total_del' => $ManualDel->countAll(),
+					'remo' => $ManualDel->where('lb', 'Remo')->countAllResults(),
+					'egba' => $ManualDel->where('lb', 'Egba')->countAllResults(),
+					'ijebu' => $ManualDel->where('lb', 'Ijebu')->countAllResults(),
+					'aoo' => $ManualDel->where('lb', 'Adoodo')->countAllResults(),
+					'others' => $ManualDel->where('lb', 'others')->countAllResults(),
+					'male' => $ManualDel->where('gender', 'male')->countAllResults(),
+					'female' => $ManualDel->where('gender', 'female')->countAllResults(),
+					'psec' => $ManualDel->where('category', 'primary')->countAllResults(),
+					'jsec' => $ManualDel->where('category', 'jsec')->countAllResults(),
+					'ssec' => $ManualDel->where('category', 'ssec')->countAllResults(),
+					'hi' => $ManualDel->where('category', 'hi')->countAllResults(),
+					'workers' => $ManualDel->where('category', 'Workers')->countAllResults(),
+					'sch_leaver' => $ManualDel->where('category', 'sch_leaver')->countAllResults(),
+				]
+			];
 
 			echo view('header');
 			echo view('dashboard', $data);
@@ -115,7 +134,7 @@ class Home extends BaseController
 		}
 	}
 
-	
+
 	public function printe()
 	{
 		$logged_in = session()->get('admin_logged_in');
