@@ -12,6 +12,10 @@
                     <p><?=$zone.' '.$gender.' '.$category?></p>
                     <div class="mb-3 row">
                         <div class="mb-3">
+                          <label for="tag" class="form-label">Tag</label>
+                          <input type="tel" class="form-control" name="tag" id="tag" aria-describedby="" placeholder="Tag no">
+                        </div>
+                        <div class="mb-3">
                           <label for="fname" class="form-label">First Name</label>
                           <input type="text" class="form-control" name="fname" id="fname" aria-describedby="" placeholder="">
                         </div>
@@ -25,7 +29,7 @@
                         </div>
                         <div class="mb-3">
                           <label for="phone" class="form-label">Phone Number</label>
-                          <input type="text" class="form-control" name="phone" id="phone" aria-describedby="" placeholder="">
+                          <input type="tel" class="form-control" name="phone" id="phone" aria-describedby="" placeholder="">
                         </div>
                         &nbsp; &nbsp; &nbsp; &nbsp;
                     </div>

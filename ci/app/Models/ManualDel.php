@@ -10,7 +10,7 @@ class ManualDel extends Model
 
     protected $returnType = 'array';
     protected $useSoftDeletes = true;
-    protected $allowedFields = ['fname','lname','lb','phone','category','school','gender'];
+    protected $allowedFields = ['fname','lname','lb','phone','category','school','gender','tag'];
 
     protected $useTimestamps = true;
     protected $createdField  = 'created_at';
