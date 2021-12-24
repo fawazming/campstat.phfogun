@@ -154,6 +154,25 @@ class Home extends BaseController
 		}
 	}
 
+	public function printm()
+	{
+		$logged_in = session()->get('admin_logged_in');
+		if ($logged_in) {
+			$Delegates = new \App\Models\ManualDel();
+
+			$data = array(
+				'delegates' => $Delegates->findAll(),
+				'type' => 'Electronic'
+			);
+
+			echo view('header');
+			echo view('print', $data);
+			echo view('footer');
+		} else {
+			echo view('login');
+		}
+	}
+
 	//--------------------------------------------------------------------
 
 }
