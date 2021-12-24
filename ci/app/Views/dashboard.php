@@ -6,7 +6,7 @@
 		General Registration Statistics
 	</h2>
 	<div class="row">
-		<div class="col-lg-2  col-sm-12">
+		<div class="col-lg-4  col-sm-12">
 			<div class="card">
 				<div class="card-body">
 					<h5 class="box-title text-center">Total Delegates</h5>
@@ -19,7 +19,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-lg-4">
+		<div class="col-lg-8">
 			<div class="card">
 				<div class="card-body">
 					<h5 class="box-title text-center">Total By Gender</h5>
@@ -40,7 +40,7 @@
 	</div>
 	<div class="row">
 		
-	<div class="col-lg-6  col-sm-12">
+	<div class="col-lg-12">
 			<div class="card">
 				<div class="card-body">
 					<h5 class="box-title text-center">Total By Zone</h5>
